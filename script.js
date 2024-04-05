@@ -25,7 +25,7 @@ function draw() {
   fill(100, 0, 200); //purple color
   text("'dots' array length: " + dots.length, 100, 100); //text and display number of dots
 
-}
+} // end of draw function
 
 function mousePressed(){ //when mouse is clicked, 1 action will take place
   let obj = new Dot(mouseX, mouseY); // creating new dot object, coordinate where mouse was clicked
@@ -34,7 +34,7 @@ function mousePressed(){ //when mouse is clicked, 1 action will take place
   /* add a line of code that adds "obj" to the "dots" array. Use the .push() method of the dots array object to append the new "obj" to the end of an existing array. Check the Array.push() documentation first to make sure you are using it correctly.
   */
 
-}
+} // end of mousePressed function
 
 
 function Dot(X, Y){ // create function to hold info about dot
@@ -48,10 +48,10 @@ function Dot(X, Y){ // create function to hold info about dot
   this.g = random(0, 255); // random green value
   this.b = random(0, 255); // random blue value
   
-  this.display = function(){ //method so ellipse appears on screen
+  this.display = function(){ // method so ellipse appears on screen
     fill(this.r, this.g, this.b); // fill ellipse with random values for color
     ellipse(this.x, this.y, this.w, this.w); // ellipse properties of x coordinate, y coordinate, and diameter
-  }
+  } // end of display function
   
   this.move = function(){ //move method
     this.x += this.sx; // x coordinate increased by 1
@@ -59,10 +59,10 @@ function Dot(X, Y){ // create function to hold info about dot
     
     if (this.x < 0 || this.x > width){ //if ellipse is off screen on right or left side
         this.sx *= -1; // change directions
-    }
+    } // end of if statement
     if (this.y < 0 || this.y > height){ // if ellipse is off screen vertically
         this.sy *= -1; // change directions
-    }
-  }
+    } // end of if statement
+  } // end of move function
     
-}
+} // end of dot function
